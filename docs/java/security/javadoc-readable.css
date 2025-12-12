@@ -1,0 +1,572 @@
+/* Professional Java Documentation Styles */
+
+/* ============================================
+   BASE STYLES & TYPOGRAPHY
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #2c3e50;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================================
+   IMPROVED NAVIGATION
+   ============================================ */
+
+/* Top Navigation Bar */
+.top-nav {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0;
+}
+
+.nav-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#navbar-top-firstrow {
+    display: flex;
+    gap: 5px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#navbar-top-firstrow li {
+    margin: 0;
+}
+
+#navbar-top-firstrow a {
+    color: #ffffff !important;
+    padding: 12px 20px;
+    display: block;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+#navbar-top-firstrow a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+}
+
+.nav-bar-cell1-rev {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Breadcrumb Navigation */
+.sub-nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e1e4e8;
+    padding: 10px 0;
+    position: sticky;
+    top: 50px;
+    z-index: 999;
+}
+
+.sub-nav-list {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    padding: 0 20px;
+    margin: 0;
+    align-items: center;
+}
+
+.sub-nav-list li:not(:last-child)::after {
+    content: "›";
+    margin-left: 8px;
+    color: #6c757d;
+}
+
+.sub-nav-list a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.sub-nav-list a:hover {
+    text-decoration: underline;
+}
+
+.current-selection {
+    color: #2c3e50 !important;
+    font-weight: 600;
+}
+
+/* ============================================
+   TABLE OF CONTENTS SIDEBAR
+   ============================================ */
+
+.toc {
+    background-color: #ffffff;
+    border-right: 1px solid #e1e4e8;
+    padding: 20px;
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+}
+
+.toc-header {
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #667eea;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #667eea;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+}
+
+.toc-list li {
+    margin: 0;
+    padding: 0;
+}
+
+.toc-list > li > a {
+    display: block;
+    padding: 8px 12px;
+    color: #495057;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.toc-list > li > a:hover {
+    background-color: #f8f9fa;
+    border-left-color: #667eea;
+    color: #667eea;
+    padding-left: 16px;
+}
+
+.toc-list .toc-list {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.toc-list .toc-list a {
+    font-size: 13px;
+    padding: 6px 12px;
+}
+
+/* Scrollbar styling for TOC */
+.toc::-webkit-scrollbar {
+    width: 6px;
+}
+
+.toc::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.toc::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 3px;
+}
+
+.toc::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    max-width: 1600px;
+    margin: 0 auto;
+    min-height: calc(100vh - 100px);
+}
+
+main {
+    background-color: #ffffff;
+    padding: 40px 50px;
+    max-width: 1000px;
+}
+
+/* ============================================
+   HEADERS
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.6em;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #1a202c;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 12px;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 1.6em;
+    border-bottom: 2px solid #e1e4e8;
+    padding-bottom: 8px;
+    margin-top: 2em;
+}
+
+h3 {
+    font-size: 1.3em;
+    color: #667eea;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+/* ============================================
+   CODE & TECHNICAL ELEMENTS
+   ============================================ */
+
+code {
+    background-color: #f6f8fa;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+    color: #e83e8c;
+    border: 1px solid #e1e4e8;
+}
+
+.member-signature {
+    background: linear-gradient(to right, #f6f8fa 0%, #ffffff 100%);
+    padding: 20px;
+    border-left: 4px solid #667eea;
+    border-radius: 6px;
+    margin: 20px 0;
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+    font-size: 15px;
+    overflow-x: auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.member-signature code {
+    background: none;
+    padding: 0;
+    border: none;
+    color: inherit;
+}
+
+/* ============================================
+   TABLES & SUMMARIES
+   ============================================ */
+
+.summary-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 25px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.summary-table .table-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 15px;
+}
+
+.summary-table > div {
+    padding: 15px;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.even-row-color {
+    background-color: #ffffff;
+}
+
+.odd-row-color {
+    background-color: #f8f9fa;
+}
+
+.summary-table > div:hover:not(.table-header) {
+    background-color: #f1f3f5;
+    transition: background-color 0.2s ease;
+}
+
+.col-first {
+    font-family: monospace;
+    font-size: 14px;
+    color: #6f42c1;
+}
+
+.col-second code {
+    font-weight: 600;
+    color: #667eea;
+    font-size: 15px;
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+
+a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+.member-name-link {
+    font-weight: 600;
+}
+
+/* ============================================
+   SECTIONS & DETAILS
+   ============================================ */
+
+.class-description,
+.detail {
+    margin: 30px 0;
+    padding: 25px 0;
+}
+
+.detail {
+    border-top: 1px solid #e1e4e8;
+}
+
+.block,
+.description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #495057;
+    margin: 15px 0;
+}
+
+/* ============================================
+   NOTES & METADATA
+   ============================================ */
+
+dl.notes {
+    background-color: #f8f9fa;
+    border-left: 4px solid #667eea;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+dl.notes dt {
+    font-weight: 700;
+    color: #667eea;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+dl.notes dt:first-child {
+    margin-top: 0;
+}
+
+dl.notes dd {
+    margin-left: 0;
+    margin-bottom: 12px;
+    color: #495057;
+    line-height: 1.6;
+}
+
+dl.notes code {
+    font-size: 14px;
+}
+
+/* ============================================
+   INHERITANCE TREE
+   ============================================ */
+
+.inheritance {
+    margin-left: 25px;
+    padding: 8px 0;
+    border-left: 2px solid #cbd5e0;
+    padding-left: 15px;
+    position: relative;
+}
+
+.inheritance::before {
+    content: "↳";
+    position: absolute;
+    left: -10px;
+    color: #667eea;
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+
+ul.tag-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.tag-list li {
+    margin: 8px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+ul.tag-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
+   ============================================ */
+
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    display: none;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .main-grid {
+        grid-template-columns: 240px 1fr;
+    }
+    
+    main {
+        padding: 30px 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .toc {
+        display: none;
+    }
+    
+    main {
+        padding: 20px;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .top-nav, 
+    .sub-nav, 
+    .toc, 
+    #backToTop {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+    }
+    
+    .main-grid {
+        display: block;
+    }
+    
+    main {
+        max-width: 100%;
+    }
+}
+
+/* ============================================
+   SMOOTH SCROLLING
+   ============================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.horizontal-scroll {
+    overflow-x: auto;
+    margin: 15px 0;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
